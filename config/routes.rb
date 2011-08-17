@@ -1,8 +1,10 @@
 OauthProject::Application.routes.draw do
-  get "omniauth_callbacks/twitter"
-
-  devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
-  root :to => 'welcome#index'
+	
+	devise_for :users, :controllers => {:omniauth_callbacks => "sessions"} do
+		get "sign_out", :to => "devise/sessions#destroy", :as => :destroy_user_session
+	end
+  
+	root :to => 'top#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

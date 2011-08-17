@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<% if user_signed_in? %>
+		<%= current_user.screen_name %>
+		<%= link_to "Sign out", destroy_user_session_path %>
+	<% else %>
+		<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+		<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+		<%= link_to "Sign in with Mixi", user_omniauth_authorize_path(:mixi) %>
+	<% end %>
 
 <%= yield %>
 

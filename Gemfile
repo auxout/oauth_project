@@ -34,3 +34,4 @@ end
 
 gem "devise"
 gem "oa-oauth", :require => "omniauth/oauth"
+gem 'oa-openid', :require => 'omniauth/openid'
