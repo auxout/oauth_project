@@ -1,4 +1,5 @@
 OauthProject::Application.configure do
+	
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -24,4 +25,12 @@ OauthProject::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+end
+
+Devise.setup do |config|
+	require 'openid/store/filesystem'
+	config.omniauth :twitter, "myRGhFRnHffCAwyes4rrnA", "kTKrnOc5HHokLdfkYLOMn0UyrzzyzsxGI3RdM89G0"
+  config.omniauth :facebook, "132916926801764", "3dddd3486fcf6b91b3b62e6708dfd26a"
+  config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
+  config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp'), :name => 'mixi', :identifier => 'https://mixi.jp'
 end

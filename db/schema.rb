@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110815041644) do
   create_table "users", :force => true do |t|
     t.string   "uid"
     t.string   "screen_name"
-    t.string   "service"
+    t.string   "provider"
     t.string   "access_token"
     t.string   "access_secret"
     t.integer  "sign_in_count",      :default => 0

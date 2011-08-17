@@ -49,3 +49,11 @@ OauthProject::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+
+Devise.setup do |config|
+	require 'openid/store/filesystem'
+	config.omniauth :twitter, "CHGC3f3H7NlggzcdekbGA", "vYLeioMJTGxNnPWCZohI8LZFW1GmtLY6FL4Y3hsBEQ"
+  config.omniauth :facebook, "132916926801764", "3dddd3486fcf6b91b3b62e6708dfd26a"
+  config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
+  config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp'), :name => 'mixi', :identifier => 'https://mixi.jp'
+end
