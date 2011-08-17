@@ -1,3 +1,4 @@
+require 'rake/dsl_definition'
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc5'
@@ -31,7 +32,6 @@ group :test do
 end
 
 group :production do
-  gem 'rake/dsl_definition'
   gem 'pg'
   gem 'therubyracer-heroku'
 end
