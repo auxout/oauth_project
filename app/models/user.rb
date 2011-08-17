@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 			user
 		else # Create a user with a stub password. 
 			User.create!({
-				:uid => access_token['uid'].to_i,
+				:uid => access_token['uid'],
 				:screen_name => data['screen_name'],
 				:provider => access_token['provider'],
 				:access_token => access_token['credentials']['token'],
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 			user
 		else # Create a user with a stub password. 
 			User.create!({
-				:uid => access_token['uid'].to_i,
+				:uid => access_token['uid'],
 				:screen_name => data['name'],
 				:provider => access_token['provider'],
 				:access_token => access_token['credentials']['token'],
