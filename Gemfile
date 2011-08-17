@@ -31,6 +31,7 @@ group :test do
 end
 
 group :production do
+  gem 'rake/dsl_definition'
   gem 'pg'
   gem 'therubyracer-heroku'
 end
