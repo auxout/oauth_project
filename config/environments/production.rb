@@ -52,8 +52,8 @@ end
 
 Devise.setup do |config|
 	require 'openid/store/filesystem'
-	config.omniauth :twitter, "CHGC3f3H7NlggzcdekbGA", "vYLeioMJTGxNnPWCZohI8LZFW1GmtLY6FL4Y3hsBEQ"
-  config.omniauth :facebook, "179012755503911", "d74651c47340ba0206149c24287594f3", {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+	config.omniauth :twitter, "APP_KEY", "APP_SECRET"
+  config.omniauth :facebook, "APP_KEY", "APP_SECRET", {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
   config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp'), :name => 'mixi', :identifier => 'https://mixi.jp'
 end
